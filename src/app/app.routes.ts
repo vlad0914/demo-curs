@@ -1,0 +1,28 @@
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { ViewUsersComponent } from "./components/view-users/view-users.component";
+import { EditUserComponent } from "./components/edit-user/edit-user.component";
+import { AddUserComponent } from "./components/add-user/add-user.component";
+
+const routes: Routes = [
+    {
+        path: '', pathMatch: 'full', component: DashboardComponent
+    },
+    {
+        path: 'view-users', component: ViewUsersComponent
+    },
+    {
+        path: 'view-users/edit-user/:id', component: EditUserComponent
+    },
+    {
+        path: 'add-user', component: AddUserComponent
+    }
+]
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+
+export class AppRoutingModule {}
