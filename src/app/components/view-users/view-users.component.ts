@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/interfaces/User.interface';
 
 @Component({
   selector: 'app-view-users',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUsersComponent implements OnInit {
 
-  users = [
-    {id: '1', nume: 'Vlad', prenume: 'Popovici', varsta: 29}
-  ]
+  users: User[] = []
 
   constructor() {}
 
@@ -17,8 +16,8 @@ export class ViewUsersComponent implements OnInit {
     
   }
 
-  stergeUtilizator(userId: number| string) {
-    console.log(userId)
+  stergeUtilizator(user: any) {
+    console.log(user)
   }
 
 }

@@ -10,14 +10,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{user.id}}</td>
-        <td>{{user.nume}}</td>
-        <td>{{user.prenume}}</td>
-        <td>{{user.varsta}}</td>
+        <td>{{user?.id}}</td>
+        <td>{{user?.nume}}</td>
+        <td>{{user?.prenume}}</td>
+        <td>{{user?.varsta}}</td>
         <td>
           <a [routerLink]="['edit-user/'+user.id]" [state]=user>Editeaza</a>
           <nz-divider nzType="vertical"></nz-divider>
-          <button nz-button nzType="primary" nzDanger="true" (click)="stergeUtilizator(user.id)">Sterge</button>
+          <button nz-button nzType="primary" nzDanger="true" (click)="stergeUtilizator(user)">Sterge</button>
         </td>
       </tr>
     </tbody>
