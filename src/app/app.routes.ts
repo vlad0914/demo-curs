@@ -4,6 +4,7 @@ import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ViewUsersComponent } from "./components/view-users/view-users.component";
 import { EditUserComponent } from "./components/edit-user/edit-user.component";
 import { AddUserComponent } from "./components/add-user/add-user.component";
+import { FindUserComponent } from "./components/find-user/find-user.component";
 
 const routes: Routes = [
     {
@@ -17,6 +18,9 @@ const routes: Routes = [
     },
     {
         path: 'add-user', component: AddUserComponent
+    },
+    {
+        path: 'find-user', component: FindUserComponent
     }
 ]
 

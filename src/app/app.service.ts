@@ -6,13 +6,25 @@ import { Injectable } from "@angular/core";
 export class AppService {
     constructor(public http: HttpClient) {}
 
-    getUsers() {}
+    getUsers() {
+        return this.http.get("http://localhost:8080/utilizatori/toti");
+    }
 
     getUserById(id: string | number) {}
 
-    addUser(dto: any) {}
+    addUser(dto: any) {
+        return this.http.post("http://localhost:8080/utilizatori/nou", dto)
+    }
 
-    editUser(id: string | number, dto: any) {}
+    editUser(dto: any) {
+        return this.http.put(`http://localhost:8080/utilizatori/modifica`, dto);
+    }
 
-    deleteUser(id: string) {}
+    deleteUser(id: number) {
+        return this.http.delete(`http://localhost:8080/utilizatori/${id}`)
+    }
+
+    findUserByName(nume: string) {
+        return this.http.get("http://localhost:8080/utilizatori/filtrare/" + nume)
+    }
 }

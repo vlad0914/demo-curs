@@ -1,0 +1,19 @@
+<form class="mutare-centru" (ngSubmit)="cautaUtilizator()">
+    <mat-form-field>
+        <mat-label>Introduceti un nume:</mat-label>
+        <input
+            style="height: 40px;"
+            matInput
+            name="nume"
+            [(ngModel)]="nume">
+    </mat-form-field>
+    <button nz-button nzType="primary">Cauta utilizator</button>
+</form>
+
+<div *ngIf="utilizatorGasit.nume; else notFound">
+    <h4>Utilizator gasit:</h4>
+    <p>Nume: {{utilizatorGasit.nume}}</p>
+    <p>Prenume: {{utilizatorGasit.prenume}}</p>
+    <p>Varsta: {{utilizatorGasit.varsta}}</p>
+</div>
+<ng-template #notFound>Nu s-a gasit</ng-template>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, NonNullableFormBuilder } from '@angular/forms';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-add-user',
@@ -14,7 +15,7 @@ export class AddUserComponent {
     varsta: FormControl<string>;
   }>;
 
-  constructor(private fb: NonNullableFormBuilder) {
+  constructor(private fb: NonNullableFormBuilder, public appService: AppService) {
 
     this.addUserForm = this.fb.group({
       nume: ['', [Validators.required]],
@@ -25,6 +26,9 @@ export class AddUserComponent {
 
   adaugaUtilizator() {
     console.log(this.addUserForm.value)
+    this.appService.addUser(this.addUserForm.value).subscribe(
+      (res: any) => console.log(res)
+    )
   }
 
   resetareFormular(e: MouseEvent): void {

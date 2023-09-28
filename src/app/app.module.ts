@@ -23,6 +23,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewUsersComponent } from './components/view-users/view-users.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { FindUserComponent } from './components/find-user/find-user.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 registerLocaleData(en);
 
@@ -33,7 +39,8 @@ registerLocaleData(en);
     DashboardComponent,
     ViewUsersComponent,
     EditUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    FindUserComponent
   ],
   imports: [
     BrowserModule,
@@ -48,11 +55,14 @@ registerLocaleData(en);
     NzDividerModule,
     NzFormModule,
     NzButtonModule,
-    NzTypographyModule
+    NzTypographyModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
   ],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
